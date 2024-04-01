@@ -31,8 +31,14 @@ const userSchema = new mongoose.Schema ({
         enum: ['admin', 'user'],
         default: 'user',
     },
+    
     // * VERIFICATION
-});
+},
+    { 
+    timestamps: true
+    }
+);
+
 
 // * SALT HASH
 userSchema.pre('save', async function () {
