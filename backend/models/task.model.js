@@ -17,8 +17,12 @@ const TaskSchema = new mongoose.Schema({
     deadline: Date,
     finished: {
         type: Boolean,
-        required: [true, 'confirm that the task has been completed']
+        default: false
     },
-});
+},
+{
+    timestamps: true,
+},
+);
 
 module.exports = mongoose.model('Task', TaskSchema);
