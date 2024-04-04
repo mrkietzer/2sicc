@@ -10,7 +10,9 @@ const SERVER_URL = `http://localhost:${PORT}`;
 
 
 // * ROUTES
-
+app.use(express.json());
+app.use("/api/v1/tasks", require("./routes/tasks.router"))
+app.use("/api/v1/missions", require("./routes/missions.router"))
 // TEMP
 app.get('/', (req, res) => {
     res.send('lets git 2SICC 2QUIT!');
