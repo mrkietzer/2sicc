@@ -7,7 +7,8 @@ const TaskSchema = new mongoose.Schema({
         maxlength: 100,
     },
     missionId: {
-        type: Number,
+        type: mongoose.Types.ObjectId,
+        ref: 'Mission',
         required: [true, 'please provide the associated mission ID number'],
     },
     description: {
